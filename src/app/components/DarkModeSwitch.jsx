@@ -11,18 +11,17 @@ const DarkModeSwitch = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
-
   return (
     <>
       {mounted &&
         (currentTheme === "dark" ? (
           <MdLightMode
-            className='hover: cursor-pointer text-xl hover:text-amber-500 '
+            className='cursor-pointer text-xl hover:text-amber-500 '
             onClick={() => setTheme("light")}
           />
         ) : (
           <BsFillMoonFill
-            className='hover: cursor-pointer text-xl hover:text-amber-500'
+            className='cursor-pointer text-xl hover:text-amber-500'
             onClick={() => setTheme("dark")}
           />
         ))}
