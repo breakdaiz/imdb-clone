@@ -4,9 +4,6 @@ const API_KEY = process.env.API_KEY;
 
 export default async function Home({ searchParams }) {
   const genre = searchParams.genre || "fetchTrending";
-  // --url 'https://api.themoviedb.org/3/account/20036259/favorite/movies?language=en-US&page=1&sort_by=created_at.asc' \
-
-  // const BASE_URL = `https://api.themoviedb.org/3/${genre}/movie/list`;
   const res = await fetch(
     `https://api.themoviedb.org/3/${
       genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
